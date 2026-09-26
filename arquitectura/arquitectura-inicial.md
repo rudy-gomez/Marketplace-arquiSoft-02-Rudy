@@ -11,7 +11,6 @@ La arquitectura inicial se organiza en **tres capas principales**:
 
 Además, el módulo de **Pedidos** se integra con sistemas externos como la 
 **pasarela de pago**, el **ERP** y el **servicio de envío**.
-
 ---
 
 ## Diagrama de arquitectura
@@ -19,6 +18,46 @@ Además, el módulo de **Pedidos** se integra con sistemas externos como la
 ![Arquitectura inicial del Marketplace](arquitectura-inicial.png)
 
 ---
+---
+
+## Diagrama de arquitectura
+
+```mermaid
+flowchart TD
+
+    subgraph ACTORES["👥 ACTORES"]
+        Cliente["Cliente"]
+        Seller["Seller"]
+        Admin["Administrador"]
+    end
+
+    subgraph PRESENTACION["🖥️ PRESENTACIÓN"]
+        Web["Aplicación Web → API REST"]
+    end
+
+    subgraph NEGOCIO["⚙️ LÓGICA DE NEGOCIO"]
+        Usuarios["Usuarios"]
+        Sellers["Sellers"]
+        Catalogo["Catálogo"]
+        Carrito["Carrito"]
+        Pedidos["Pedidos"]
+    end
+
+    subgraph DATOS["🗄️ DATOS"]
+        BD["Base de datos"]
+    end
+
+    subgraph EXTERNOS["🌐 SISTEMAS EXTERNOS"]
+        Pago["Pasarela de pago"]
+        ERP["ERP"]
+        Envio["Servicio de envío"]
+    end
+
+    ACTORES --> PRESENTACION
+    PRESENTACION --> NEGOCIO
+    NEGOCIO --> DATOS
+    DATOS -->|"integraciones"| EXTERNOS
+```
 
 ## Justificación
 La separación en capas permite aislar responsabilidades: la capa de 
