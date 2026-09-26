@@ -1,0 +1,16 @@
+{
+    "diagram_type":  "architecture",
+    "output":  "marketplace-mascotas.html",
+    "specification_sha256":  "88074698eea16918ef965d31f566b2927579179ced2d65447d3869a8453289d3",
+    "specification_bytes":  13696,
+    "artifact_sha256":  "890e174897e45c2b97a938131bf25ab4b13fb59980824d6a5e6c872d5c13f0cb",
+    "artifact_bytes":  809893,
+    "validation":  "9/9 showcase, 0 errors, 0 warnings",
+    "browser_evidence":  "passed",
+    "visual_review":  "passed",
+    "visual_review_scope":  "Inspección de capturas: 1440x900 light y 2048x1320 dark; capas, textos, conexiones y distribución legibles.",
+    "correction_rounds":  1,
+    "authored_language":  "es",
+    "viewer_language":  "en",
+    "relationship_labels":  "Se omiten porque los extremos y la dirección expresan las conexiones solicitadas, sin protocolos adicionales especificados."
+}

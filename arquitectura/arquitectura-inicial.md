@@ -56,8 +56,24 @@ flowchart TD
     ACTORES --> PRESENTACION
     PRESENTACION --> NEGOCIO
     NEGOCIO --> DATOS
-    DATOS -->|"integraciones"| EXTERNOS
+    Pedidos -->|"integraciones"| EXTERNOS
 ```
+
+### Vista visual de la arquitectura
+
+<p align="center">
+  <a href="marketplace-mascotas-blanco.svg">
+    <img src="marketplace-mascotas-blanco.svg" alt="Arquitectura del Marketplace de mascotas: actores, presentación, lógica de negocio, datos e integraciones de Pedidos." width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <em>Arquitectura por capas · Integraciones externas desde Pedidos</em><br>
+  <a href="marketplace-mascotas-blanco.svg">Ver imagen completa</a> ·
+  <a href="marketplace-mascotas.html">Versión interactiva</a>
+</p>
+
+La versión interactiva permite cambiar entre fondo claro y oscuro, ampliar y exportar el diagrama. Para utilizarla, descarga el archivo HTML y ábrelo en tu navegador.
 
 ## Justificación
 La separación en capas permite aislar responsabilidades: la capa de 

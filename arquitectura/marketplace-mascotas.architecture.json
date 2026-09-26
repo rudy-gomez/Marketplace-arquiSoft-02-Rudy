@@ -1,0 +1,331 @@
+{
+    "schema_version":  1,
+    "diagram_type":  "architecture",
+    "meta":  {
+                 "title":  "Marketplace de mascotas",
+                 "quality_profile":  "showcase",
+                 "viewBox":  [
+                                 1120,
+                                 620
+                             ]
+             },
+    "components":  [
+                       {
+                           "id":  "actor-cliente",
+                           "type":  "external",
+                           "label":  "Cliente",
+                           "pos":  [
+                                       80,
+                                       55
+                                   ],
+                           "size":  [
+                                        180,
+                                        64
+                                    ]
+                       },
+                       {
+                           "id":  "actor-seller",
+                           "type":  "external",
+                           "label":  "Seller",
+                           "pos":  [
+                                       330,
+                                       55
+                                   ],
+                           "size":  [
+                                        180,
+                                        64
+                                    ]
+                       },
+                       {
+                           "id":  "actor-admin",
+                           "type":  "external",
+                           "label":  "Administrador",
+                           "pos":  [
+                                       580,
+                                       55
+                                   ],
+                           "size":  [
+                                        180,
+                                        64
+                                    ]
+                       },
+                       {
+                           "id":  "web-rest",
+                           "type":  "frontend",
+                           "label":  "Aplicación Web (API REST)",
+                           "pos":  [
+                                       270,
+                                       190
+                                   ],
+                           "size":  [
+                                        300,
+                                        80
+                                    ]
+                       },
+                       {
+                           "id":  "mod-usuarios",
+                           "type":  "backend",
+                           "label":  "Usuarios",
+                           "pos":  [
+                                       50,
+                                       340
+                                   ],
+                           "size":  [
+                                        140,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "mod-sellers",
+                           "type":  "backend",
+                           "label":  "Sellers",
+                           "pos":  [
+                                       200,
+                                       340
+                                   ],
+                           "size":  [
+                                        140,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "mod-catalogo",
+                           "type":  "backend",
+                           "label":  "Catálogo",
+                           "pos":  [
+                                       350,
+                                       340
+                                   ],
+                           "size":  [
+                                        140,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "mod-carrito",
+                           "type":  "backend",
+                           "label":  "Carrito",
+                           "pos":  [
+                                       500,
+                                       340
+                                   ],
+                           "size":  [
+                                        140,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "mod-pedidos",
+                           "type":  "backend",
+                           "label":  "Pedidos",
+                           "pos":  [
+                                       650,
+                                       340
+                                   ],
+                           "size":  [
+                                        140,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "datos-marketplace",
+                           "type":  "database",
+                           "label":  "Base de datos",
+                           "pos":  [
+                                       270,
+                                       510
+                                   ],
+                           "size":  [
+                                        300,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "ext-pago",
+                           "type":  "external",
+                           "label":  "Pasarela de pago",
+                           "pos":  [
+                                       895,
+                                       195
+                                   ],
+                           "size":  [
+                                        190,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "ext-erp",
+                           "type":  "external",
+                           "label":  "ERP",
+                           "pos":  [
+                                       895,
+                                       340
+                                   ],
+                           "size":  [
+                                        190,
+                                        72
+                                    ]
+                       },
+                       {
+                           "id":  "ext-envio",
+                           "type":  "external",
+                           "label":  "Servicio de envío",
+                           "pos":  [
+                                       895,
+                                       485
+                                   ],
+                           "size":  [
+                                        190,
+                                        72
+                                    ]
+                       }
+                   ],
+    "boundaries":  [
+                       {
+                           "kind":  "region",
+                           "label":  "Actores",
+                           "wraps":  [
+                                         "actor-cliente",
+                                         "actor-seller",
+                                         "actor-admin"
+                                     ],
+                           "pad":  20
+                       },
+                       {
+                           "kind":  "region",
+                           "label":  "Presentación",
+                           "wraps":  [
+                                         "web-rest"
+                                     ],
+                           "pad":  20
+                       },
+                       {
+                           "kind":  "region",
+                           "label":  "Lógica de Negocio",
+                           "wraps":  [
+                                         "mod-usuarios",
+                                         "mod-sellers",
+                                         "mod-catalogo",
+                                         "mod-carrito",
+                                         "mod-pedidos"
+                                     ],
+                           "pad":  20
+                       },
+                       {
+                           "kind":  "region",
+                           "label":  "Datos",
+                           "wraps":  [
+                                         "datos-marketplace"
+                                     ],
+                           "pad":  20
+                       },
+                       {
+                           "kind":  "region",
+                           "label":  "Sistemas Externos",
+                           "wraps":  [
+                                         "ext-pago",
+                                         "ext-erp",
+                                         "ext-envio"
+                                     ],
+                           "pad":  20
+                       }
+                   ],
+    "connections":  [
+                        {
+                            "from":  "actor-cliente",
+                            "to":  "web-rest",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "actor-seller",
+                            "to":  "web-rest",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "actor-admin",
+                            "to":  "web-rest",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "web-rest",
+                            "to":  "mod-usuarios",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "web-rest",
+                            "to":  "mod-sellers",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "web-rest",
+                            "to":  "mod-catalogo",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "web-rest",
+                            "to":  "mod-carrito",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "web-rest",
+                            "to":  "mod-pedidos",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "mod-usuarios",
+                            "to":  "datos-marketplace",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "mod-sellers",
+                            "to":  "datos-marketplace",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "mod-catalogo",
+                            "to":  "datos-marketplace",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "mod-carrito",
+                            "to":  "datos-marketplace",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "mod-pedidos",
+                            "to":  "datos-marketplace",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        },
+                        {
+                            "from":  "mod-pedidos",
+                            "to":  "ext-pago",
+                            "fromSide":  "right",
+                            "toSide":  "left"
+                        },
+                        {
+                            "from":  "mod-pedidos",
+                            "to":  "ext-erp",
+                            "fromSide":  "right",
+                            "toSide":  "left"
+                        },
+                        {
+                            "from":  "mod-pedidos",
+                            "to":  "ext-envio",
+                            "fromSide":  "right",
+                            "toSide":  "left"
+                        }
+                    ]
+}
