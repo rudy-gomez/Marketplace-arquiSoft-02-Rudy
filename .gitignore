@@ -2,3 +2,6 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Dependencias de Node
+boilerplate-main/node_modules/
