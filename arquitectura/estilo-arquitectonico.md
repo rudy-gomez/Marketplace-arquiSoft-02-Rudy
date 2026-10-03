@@ -20,7 +20,7 @@ respondiendo a los drivers arquitectónicos identificados en la Guía 02.
 
 ## Diagrama de arquitectura
 
-![Estilo arquitectónico del Marketplace — Monolito modular en capas](estilo-arquitectonico.png)
+![Estilo arquitectónico del Marketplace — Monolito modular en capas](estilo_arquitectonico.png)
 
 ---
 
